@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"hello-compiled.js",
+"lineCount":1,
+"mappings":"AACA,IAAIA,EAAI,MACRC,SAASA,GAAE,EAAG,CACZC,OAAA,CAAQC,GAAR,CAAYH,CAAZ,CADY,CAGdC,EAAA;",
+"sources":["main.js"],
+"names":["a","fn","console","log"]
+}

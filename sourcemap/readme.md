@@ -1,0 +1,1 @@
+java -jar closure-compiler-v20201102.jar --js main.js --create_source_map=main.js.map --js_output_file hello-compiled.js
