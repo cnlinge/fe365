@@ -42,11 +42,7 @@ class Pub {
   constructor(dispatcher) {
     this.dispatcher = dispatcher
   }
-  /**
-   * @description: 发布方法
-   * @param {type} 通知类型
-   */
-  publish(type) {
+  publish(type) { // 发布方法， type是通知类型
     this.dispatcher.publish(type, this)
   }
 }
@@ -55,10 +51,10 @@ class Subscriber {
   constructor(dispatcher) {
     this.dispatcher = dispatcher
   }
-  subscribe(type) {
-    this.dispatcher.subscribe(type, this)
+  subscribe(type) { // 订阅方法，type是订阅的通知类型
+    this.dispatcher.subscribe(type, this) // this是当前低调用 subscribe 的订阅者
   }
-  doUpdate(type, arg) {
+  doUpdate(arg) {
     console.log('接受到消息' + arg)
   }
 }
@@ -72,7 +68,7 @@ class Dispatcher {
     if (!this.dispatcher[type]) {
       this.dispatcher[type] = []
     }
-    this.dispatcher[type].push(subscriber)
+    this.dispatcher[type].push(subscriber) // 将与本消息相关的订阅者存起来
   }
   //退订
   unsubscribe(type, subscriber) {
@@ -122,6 +118,7 @@ let reader3 = new Reader('小李', dispatcher)
 reader1.subscribe('前端')
 reader2.subscribe('数据库')
 reader3.subscribe('数据库')
+
 //公众号发布文章
 wei1.publishArticle('前端')
 wei1.publishArticle('数据库')
